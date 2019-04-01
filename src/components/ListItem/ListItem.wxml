@@ -1,0 +1,19 @@
+<view class="weui-flex kp-item {{prefixStyleClass}} {{hasLine?'':'kp-noline'}} {{isOrderDetail?'order-detail':''}}">
+    <circle-radio class="kp-radio" status="{{selectStatus}}" wx:if="{{needSelect}}"></circle-radio>
+    <view class="kp-preview-box">
+        <view class="kp-mask" wx:if="{{markValue}}">
+      {{markValue}}
+    </view>
+        <view class="kp-video" wx:if="{{hasVideo}}"></view>
+        <image bind:tap="tapThumbnail" class="kp-preview" lazyLoad="true" mode="aspectFill" src="{{thumbnailUrl}}" wx:if="{{thumbnailUrl}}"></image>
+    </view>
+    <view class="kp-info-box weui-flex__item weui-flex {{needSelect?'kp-cannot-tap':''}}">
+        <view class="kp-title kp-ellipsis-2">
+            <slot name="title"></slot>
+        </view>
+        <view class="kp-message weui-flex weui-flex__item {{messageFlexEnd?'kp-message-flex-end':''}}">
+            <slot name="message"></slot>
+        </view>
+        <view style="{{needSelect||isLeftSlided?'position: absolute;top: 0; left: 0; right: 0; bottom: 0;z-index: 3;':''}}"></view>
+    </view>
+</view>

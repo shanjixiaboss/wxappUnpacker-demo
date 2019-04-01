@@ -1,0 +1,25 @@
+<view bind:tap="radioChange" class="kp-radio-list" wx:if="{{!nowrap}}">
+    <view class="kp-radio {{radioStyle}} {{checked==item[itemKey]?'actived':''}} {{tools.setBorderStyle(styleType,item.badge)}}" data-id="{{item[itemKey]}}" data-index="{{index}}" wx:for="{{radioList}}" wx:key="{{index}}">{{item[itemName]}}
+      <view class="kp-line-badge" hidden="{{!item.badge}}" wx:if="{{styleType==='line'}}">
+            <image class="kp-actived-icon" hidden="{{checked==item[itemKey]}}" src="../../../assets/checkbox_normal_line.png"></image>
+            <image class="kp-actived-icon" hidden="{{checked!==item[itemKey]}}" src="../../../assets/checkbox_selected_line.png"></image>
+        </view>
+        <view class="kp-square-badge" hidden="{{!item.badge}}" wx:elif="{{styleType==='square'}}">
+            <image class="kp-actived-icon" hidden="{{checked==item[itemKey]}}" src="../../../assets/checkbox_normal.png"></image>
+            <image class="kp-actived-icon" hidden="{{checked!==item[itemKey]}}" src="../../../assets/checkbox_selected.png"></image>
+        </view>
+    </view>
+</view>
+<scroll-view scrollX bind:tap="radioChange" class="kp-radio-list kp-nowrap" wx:elif="{{nowrap}}">
+    <view class="kp-radio {{radioStyle}} {{checked==item[itemKey]?'actived':''}} {{tools.setBorderStyle(styleType,item.badge)}}" data-id="{{item[itemKey]}}" data-index="{{index}}" style="font-size: 34rpx;" wx:for="{{radioList}}" wx:key="{{index}}">{{item[itemName]}}
+      <view class="kp-line-badge" hidden="{{!item.badge}}" wx:if="{{styleType==='line'}}">
+            <image class="kp-actived-icon" hidden="{{checked==item[itemKey]}}" src="../../../assets/checkbox_normal_line.png"></image>
+            <image class="kp-actived-icon" hidden="{{checked!==item[itemKey]}}" src="../../../assets/checkbox_selected_line.png"></image>
+        </view>
+        <view class="kp-square-badge" hidden="{{!item.badge}}" wx:elif="{{styleType==='square'}}">
+            <image class="kp-actived-icon" hidden="{{checked==item[itemKey]}}" src="../../../assets/checkbox_normal.png"></image>
+            <image class="kp-actived-icon" hidden="{{checked!==item[itemKey]}}" src="../../../assets/checkbox_selected.png"></image>
+        </view>
+    </view>
+</scroll-view>
+<wxs module="tools" src="RequireList.wxs" />

@@ -1,0 +1,18 @@
+{
+    "navigationBarTitleText": "选购",
+    "usingComponents": {
+        "list-item": "../components/ListItem/ListItem",
+        "price": "../components/Price/Price",
+        "tiny-tag": "../components/TinyTag/TinyTag",
+        "unit-radio-list": "../components/RadioList/RadioList",
+        "third-radio-list": "../components/RequireList/RequireList",
+        "second-radio-list": "../components/RequireList/RequireList",
+        "input-number": "../components/InputNumber/InputNumber",
+        "summary-bar": "../components/SummaryBar/SummaryBar",
+        "message-box": "../components/MessageBox/MessageBox",
+        "character-counter": "../components/CharacterCounter/CharacterCounter",
+        "kp-navigator": "../components/Navigator/navigator",
+        "product-poster-gallery": "../components/ProductPosterGallery/ProductPosterGallery",
+        "product-image-swiper": "../components/ProductImageSwiper/ProductImageSwiper"
+    }
+}

@@ -1,0 +1,4 @@
+.kp-selected-item {
+    width: 48rpx;
+    height: 48rpx;
+}

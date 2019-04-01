@@ -1,0 +1,11 @@
+<view class="kp-modal-wrapper" hidden="{{!isShow}}">
+    <view class="kp-mask"></view>
+    <view class="kp-modal">
+        <view class="kp-title">{{titleText}}</view>
+        <slot></slot>
+        <view bindtap="tapButton" class="kp-button-wrapper weui-flex">
+            <view class="weui-flex__item kp-cancel" data-type="0">{{cancelText}}</view>
+            <view class="weui-flex__item kp-confirm" data-type="1">{{confirmText}}</view>
+        </view>
+    </view>
+</view>

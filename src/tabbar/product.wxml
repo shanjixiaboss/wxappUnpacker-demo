@@ -1,0 +1,83 @@
+<import src="../templates/load-more.wxml"></import>
+<import src="../templates/complete-info.wxml"></import>
+<import src="../templates/place-order-modal.wxml"></import>
+<template is="place-order-modal" data="{{...modal}}"></template>
+<import src="../templates/unit-modal.wxml"></import>
+<template is="unit-modal" data="{{...modal}}"></template>
+<scroll-view enableBackToTop scrollWithAnimation scrollY bind:tap="closeTooltip" class="container" scrollTop="{{outerScrollTop}}">
+    <view bind:tap="openCorpIntro" class="kp-brief-header weui-flex">
+        <image class="kp-avatar" mode="aspectFill" src="{{avatar}}"></image>
+        <view class="kp-info">
+            <view catch:tap="showToolTip" class="item weui-flex" data-id="notice">
+                <image mode="aspectFill" src="/assets/notice.png"></image>
+                <text class="kp-ellipsis weui-flex__item">{{notice||'欢迎选购'}}</text>
+            </view>
+            <view catch:tap="showToolTip" class="item weui-flex" data-id="address" wx:if="{{address}}">
+                <image mode="aspectFill" src="/assets/address.png"></image>
+                <text class="kp-ellipsis weui-flex__item">{{address}}</text>
+            </view>
+            <view catch:tap="phoneCall" class="item weui-flex">
+                <image mode="aspectFill" src="/assets/phone.png"></image>
+                <text class="kp-ellipsis weui-flex__item">{{phone}}{{staffName}}</text>
+            </view>
+            <view catch:tap="closeTooltip">
+                <tool-tip key="{{toolTip.key}}" text="{{toolTip.text}}"></tool-tip>
+            </view>
+        </view>
+        <button catch:tap="stopPropagation" class="kp-share-store-button" openType="share">
+            <image class="kp-share-store" mode="aspectFill" src="/assets/share_store.png"></image>
+        </button>
+    </view>
+    <view class="kp-fix-section">
+        <view class="kp-search-box weui-flex">
+            <image bind:tap="toggleLayoutStyle" mode="aspectFill" src="{{blockStyle?'/assets/list.png':'/assets/grid.png'}}"></image>
+            <view bind:tap="navigateToPage" class="kp-search-input weui-flex weui-flex__item" data-id="PRODUCT_SEARCH">
+                <icon size="11" type="search"></icon>
+                <text class="flex-weui__item">搜索货名/属性/条码</text>
+            </view>
+            <image bind:tap="scanProduct" mode="aspectFill" src="/assets/scan.png"></image>
+        </view>
+    </view>
+    <view class="kp-classify-container">
+        <view class="kp-classify-aside">
+            <scroll-view scrollWithAnimation scrollY bindscroll="handleScroll" class="kp-menu-list">
+                <view bind:tap="switchTab" class="kp-menu-item {{activedTab===item.tag_id&&'active'}}" data-id="{{item.tag_id}}" wx:for="{{tabDist}}" wx:key="{{item.tag_id}}">
+                    <image mode="aspectFill" src="/assets/tabs/{{item.iconName}}{{activedTab===item.tag_id?'-active':''}}.png" wx:if="{{item.iconName}}"></image>
+                    <text>{{item.name}}</text>
+                </view>
+            </scroll-view>
+        </view>
+        <view class="kp-classify-main">
+            <view class="scroll-view-container">
+                <classify-menu bind:tapOption="handleTapClassifyMenu" class="classify-menu" root="{{selectedTag}}"></classify-menu>
+                <view class="product-scroll-view-container">
+                    <scroll-view enableBackToTop scrollWithAnimation scrollY bindscroll="handleScroll" bindscrolltolower="handleScrollToLower" class="product-scroll-view product-list-skeleton {{loading?'':'no-bg-img'}}" lowerThreshold="{{148*5}}" scrollTop="{{scrollTop}}">
+                        <view class="{{blockStyle?'block-product-list':'default-product-list'}}">
+                            <fast-list-item bind:tap="tapListItem" class="{{blockStyle?'block-style':'list-style'}}" data-id="{{item.product_id}}" hasVideo="{{item.kpv.video}}" prefixStyleClass="{{blockStyle?'kp-item__block':'kp-item__list'}}" thumbnailUrl="{{item.kpv.thumbnail[0]}}" wx:for="{{productList}}" wx:key="{{item.product_id}}">
+                                <view class="kp-ellipsis-2" slot="title">
+                {{item.name}} {{item.kpv.attrs}}
+              </view>
+                                <view class="weui-flex kp-message-wrapper" slot="message">
+                                    <view class="kp-current-msg weui-flex__item">
+                                        <price catch:unitSelect="handleUnitSelect" class="kp-ellipsis price-flex-end" data-id="{{item.product_id}}" isMultiUnit="{{item.units.unit.length>1}}" isShow="{{priceOn}}" style="{{blockStyle?'overflow:visible;':''}}" unit="{{item.kpv.unitName}}" value="{{item.kpv.price}}"></price>
+                                    </view>
+                                    <view class="kp-number-input">
+                                        <view catch:tap="processPlaceOrder" class="multi-specs-tap-hover" data-id="{{item.product_id}}" wx:if="{{item.kpv.hasMultipleSpecs}}"></view>
+                                        <input-number catch:onchange="processPlaceOrder" cid="{{0}}" data-id="{{item.product_id}}" expandClickArea="{{false}}" initialValue="{{item.kpv.quantity}}" precision="{{quality_precision}}" stock="{{item.kpv.stock}}" style="{{blockStyle?'align-self:flex-end;':''}}" value="{{item.kpv.extra.quantity}}"></input-number>
+                                    </view>
+                                </view>
+                            </fast-list-item>
+                        </view>
+                        <pagination bind:next="toNext" bind:prev="toPrev" hasNext="{{hasNext||lastPage!==pagination}}" pagination="{{pagination}}" wx:if="{{paginationOn}}"></pagination>
+                        <template is="load-more" data="{{loading:loading,end_text:'加载完成',initLoad:!productList.length}}" wx:elif="{{loading||productList.length}}"></template>
+                        <view class="no-result" wx:else>
+                            <image mode="aspectFit" src="/assets/empty_list.png"></image>
+                            <text>{{tabDist[activedTab].noResultText}}</text>
+                        </view>
+                        <template is="complete-info" data="{{tap:'completeInfo'}}" wx:if="{{showCompleteInfo}}"></template>
+                    </scroll-view>
+                </view>
+            </view>
+        </view>
+    </view>
+</scroll-view>

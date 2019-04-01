@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+.kp-tag {
+    display: inline-block;
+    line-height: 29rpx;
+    padding: 3rpx 8rpx 0rpx;
+    font-size: 24rpx;
+    border: 2rpx solid;
+    border-radius: 0rpx;
+    text-align: center;
+}
+
+.kp-tag1 {
+    display: inline-block;
+    line-height: 28rpx;
+    padding: 0rpx 8rpx;
+    font-size: 24rpx;
+    border: 3rpx solid;
+    text-align: center;
+    border-radius: 4rpx;
+    min-width: 76rpx;
+}

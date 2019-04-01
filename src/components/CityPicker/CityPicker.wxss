@@ -1,0 +1,24 @@
+.picker-view-page {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    background: transparent;
+}
+
+.picker-view-page-true {
+    z-index: 999;
+    height: 100%;
+}
+
+.picker-view {
+    width: 100%;
+    position: absolute;
+    background: #FFF;
+    opacity: 1;
+    bottom: 0;
+}
+
+.picker-view-column {
+    line-height: 70rpx;
+}

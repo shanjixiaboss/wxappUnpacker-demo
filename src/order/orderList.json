@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "单据",
+    "usingComponents": {
+        "order-item": "../components/OrderItem/OrderItem"
+    }
+}

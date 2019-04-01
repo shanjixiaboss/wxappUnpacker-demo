@@ -1,0 +1,11 @@
+<template name="corporation-info">
+    <view style="text-align:center;padding-top: 160rpx;" wx:if="{{corporation.corp_name}}">
+        <view style="width:120rpx;height:120rpx;margin:0 auto;">
+            <image src="{{tools.getCorporationIcon(corporation.icon_url)||'../../../assets/kp_logo.png'}}" style="width:120rpx;height:120rpx;border-radius:10%;"></image>
+        </view>
+        <view style="margin:20rpx 0;font-size:28rpx;font-weight:600;">
+        {{corporation.corp_name}}
+      </view>
+    </view>
+</template>
+<wxs module="tools" src="../../utils/tools.wxs" />

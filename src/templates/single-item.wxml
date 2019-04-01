@@ -1,0 +1,56 @@
+<template name="wx-image-item">
+    <view capture-catch:touchstart="{{callback}}" class="weui-cell" id="{{key}}">
+        <view class="weui-cell__bd flex_half" style="min-width:80px;font-size:32rpx;">头像</view>
+        <view class="wx-image-item_thumb">
+            <image class="weui-media-box__thumb" src="{{url}}"></image>
+        </view>
+    </view>
+</template>
+<template name="wx-address-item">
+    <view class="weui-cell  common-height">
+        <view class="weui-cell__hd">
+            <image class="img-address-wx" src="/assets/addAddress.png" wx:if="{{addAddress}}"></image>
+            <image class="img-address-wx" src="/assets/weixin-green.png" wx:else></image>
+        </view>
+        <view class="weui-cell__bd" style="padding:0 10rpx 0 20rpx; text-align:{{float||'right'}}">
+            <input disabled bindtap="{{callback}}" class="weui-cell__bd" placeholder="{{placeholder||'补充收货地址'}}" placeholderStyle="color:#b2b2b2;" wx:if="{{addAddress}}"></input>
+            <input disabled bindtap="{{callback}}" class="weui-cell__bd" placeholder="{{placeholder||'一键获取微信地址'}}" placeholderStyle="color:#b2b2b2;" wx:else></input>
+        </view>
+        <view class="weui-cell__ft_in-access{{icon}}"></view>
+    </view>
+</template>
+<template name="selectItem">
+    <view class="weui-flex select-list">
+        <view bindtap="{{item.callback}}" class="weui-flex__item select-item {{checked==index?'actived':''}}" id="{{item.id}}" wx:for="{{selectList}}" wx:key="selectItem">
+        {{item.name}}
+        <icon class="kp-actived-icon" color="#fff" hidden="{{!(checked==index)}}" size="8" type="success_no_circle"></icon>
+        </view>
+    </view>
+</template>
+<template name="single-item">
+    <view bindtap="{{callback}}" class="weui-cell" id="{{key}}">
+        <view class="weui-cell__bd c-single-item-left">{{leftName}}</view>
+        <input bindblur="{{input.bindblur}}" class="weui-cell__bd c-single-item-ft" id="{{key}}" name="{{input.name}}" placeholder="{{input.placeholder}}" placeholderStyle="color:#b2b2b2;" value="{{rightVal}}" wx:if="{{input}}"></input>
+        <textarea class="c-single-item-ft text-area" id="{{key}}" maxlength="40" name="{{textarea.name}}" placeholder="{{textarea.placeholder}}" placeholderStyle="color: #b2b2b2;text-align: right;" showConfirmBar="false" value="{{rightVal}}" wx:elif="{{textarea}}"></textarea>
+        <block wx:elif="{{region}}">
+            <picker bindchange="bindRegionChange" class="weui-cell__bd c-single-item-ft" mode="region" value="{{region}}">
+        {{region[0]}} {{region[1]}} {{region[2]}}
+      </picker>
+            <image class="img-wx" src="/assets/location.png"></image>
+        </block>
+        <block wx:elif="{{pickerview}}">
+            <input disabled class="weui-cell__bd c-single-item-ft" data-picker="{{pickerview.address}}" id="{{key}}" name="{{pickerview.name}}" placeholder="{{pickerview.placeholder}}" value="{{rightVal}}"></input>
+            <image class="img-wx" src="/assets/location.png"></image>
+        </block>
+        <block wx:elif="{{wxAddress}}">
+            <input class="weui-cell__bd c-single-item-ft" data-picker="{{wxAddress.address}}" id="{{key}}" name="{{wxAddress.name}}" placeholder="{{wxAddress.placeholder}}" placeholderStyle="color:#b2b2b2;" value="{{rightVal}}"></input>
+            <image class="img-address-wx" src="/assets/weixin-green.png"></image>
+        </block>
+        <block wx:else>
+            <view class="weui-media-box__title c-single-item-ft">
+        {{title_right_tag}}{{rightVal}}
+      </view>
+            <view class="weui-cell__ft_in-access{{icon}}"></view>
+        </block>
+    </view>
+</template>

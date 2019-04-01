@@ -1,0 +1,12 @@
+<template name="load-more">
+    <view class="kp-loadmore {{extraClass}}">
+        <block wx:if="{{loading&&initLoad}}"></block>
+        <view class="kp-loadmore__loading" wx:elif="{{loading}}">
+            <i class="weui-loading "></i>
+            <text class="kp-loadmore__tips_text">{{loading_text||'正在加载'}}</text>
+        </view>
+        <view class="kp-loadmore__tips_in-line" wx:else>
+            <text class="kp-loadmore__tips_text">{{end_text||'我是底线'}} ：）</text>
+        </view>
+    </view>
+</template>

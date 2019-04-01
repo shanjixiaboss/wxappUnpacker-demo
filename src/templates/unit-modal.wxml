@@ -1,0 +1,11 @@
+<template name="unit-modal">
+    <view bind:tap="toggleUnitModal" class="unit-modal-container" wx:if="{{unitModal}}">
+        <view class="unit-modal-dialog">
+            <view class="title">选择下单单位</view>
+            <view class="subtitle">显示价格为当前单位对应价</view>
+            <view class="unit-list">
+                <unit-radio-list bindonchange="changeUnitInModal" checked="{{extra.unit_index}}" customClass="unit-modal" itemKey="{{'unit_id'}}" itemName="{{'name'}}" radioList="{{product.units.unit}}" styleType="{{'checking'}}"></unit-radio-list>
+            </view>
+        </view>
+    </view>
+</template>

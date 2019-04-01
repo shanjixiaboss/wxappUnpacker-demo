@@ -1,0 +1,20 @@
+<navigator class="bill-cells" hoverClass="none" style="position:relative;overflow-x: hidden;" url="/src/order/orderDetail?order_id={{orderId}}">
+    <view class="weui-cell weui-cell-padding bg_{{(orderStatus&65536)==65536&&(orderStatus&131072)!=131072}}">
+        <view class="weui-cell__bd" style="font-size:28rpx;opacity:.5;">{{titleLeft}}</view>
+        <view style="font-size:32rpx;">
+            <currency money="{{titleRight}}"></currency>
+        </view>
+    </view>
+    <view>
+        <view class="weui-cell weui-cell-padding" style="height:120rpx;">
+            <view class="weui-flex__item">
+                <block wx:if="{{index<img_length}}" wx:for="{{imgList}}" wx:key="img">
+                    <image class="weui-media-box__hd_in-appmsg" lazyLoad="true" src="{{item.snapshot.kpv.thumbnail}}" wx:if="{{item.snapshot.kpv.thumbnail!='/assets/default.png'}}"></image>
+                </block>
+            </view>
+        </view>
+        <tiny-tag style="position:absolute;right:30rpx;bottom:20rpx;" tagName="ORDER" tagType="{{orderType}}-{{orderStatus}}"></tiny-tag>
+        <view class="remark" wx:if="{{remark}}">{{remark}}</view>
+    </view>
+</navigator>
+<wxs module="tools" src="../../../utils/tools.wxs" />

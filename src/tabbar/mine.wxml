@@ -1,0 +1,23 @@
+<import src="../templates/single-item.wxml"></import>
+<view class="page">
+    <view capture-catch:touchstart="itemCallback" class="weui-cell kp-top_solid" id="MINE_INFO">
+        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="{{avatarUrl}}"></image>
+        </view>
+        <view class=" weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title">{{cloudstore.storeProfile.name||session.wxInfo.userInfo.nickName}}</view>
+            <view class="weui-media-box__desc">{{cloudstore.storeProfile.corporation_name}}</view>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </view>
+    <view class="panel-mid">
+        <template is="single-item" data="{{...item}}" wx:for="{{commonList}}" wx:key="commonList"></template>
+    </view>
+    <view>
+        <template is="single-item" data="{{...historyList}}"></template>
+    </view>
+    <view bindtap="clickHereToChangeEnviroment" class="weui-footer ">
+        <image src="/assets/logo_tips.svg" style="height:76rpx;margin:0 auto"></image>
+    </view>
+</view>
+<wxs module="tools" src="../../utils/tools.wxs" />

@@ -1,0 +1,20 @@
+<template name="placeorder-content-loader">
+    <view style="background: #fff;">
+        <view class="tpl-color tpl-image-swipper"></view>
+        <view class="tpl-wrapper">
+            <view style="display: inline-block;width: 90%">
+                <view class="tpl-color tpl-content-line" style="width: 92%"></view>
+                <view class="tpl-color tpl-content-line" style="width: 58%;margin-bottom: 40rpx;"></view>
+                <view class="tpl-color tpl-content-line" style="width: 22%"></view>
+            </view>
+            <view class="tpl-color tpl-icon" style="display: inline-block;float: right"></view>
+        </view>
+        <view class="tpl-color tpl-gap"></view>
+        <view class="tpl-wrapper">
+            <view class="tpl-color tpl-content-line" style="width: 58%"></view>
+            <view class="tpl-color tpl-content-line" style="width: 30%"></view>
+            <view class="tpl-color tpl-content-line" style="width: 60%"></view>
+            <view class="tpl-color tpl-content-line" style="width: 30%"></view>
+        </view>
+    </view>
+</template>

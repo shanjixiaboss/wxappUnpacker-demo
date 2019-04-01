@@ -1,0 +1,6 @@
+<template name="complete-info">
+    <view bind:tap="{{tap}}" class="kp-complete-info">
+        <text class="plus">+</text>
+        <text class="text">完善信息</text>
+    </view>
+</template>

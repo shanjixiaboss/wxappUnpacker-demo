@@ -1,0 +1,9 @@
+<view catch:tap="changeNumber" class="kp-input-number weui-flex" data-cid="{{cid}}">
+    <view class="kp-button weui-flex" data-type="0" style="{{expandClickArea?'height: 90rpx':''}}">
+        <image class="kp-minus" data-type="0" src="../../../assets/minus.png" style="{{!inputValue?'visibility: hidden;':''}}"></image>
+    </view>
+    <input bindblur="bindInputBlur" bindfocus="bindInputFocus" bindinput="bindInputChange" class="kp-input weui-flex__item" data-cid="{{cid}}" placeholder="{{placeholder}}" placeholderClass="placeholder-class" style="{{inputValue==0?'color: #ddd;':''}}" type="digit" value="{{inputValue}}"></input>
+    <view class="kp-button weui-flex" data-type="1" style="{{expandClickArea?'height: 90rpx':''}}">
+        <image class="kp-plus" data-type="1" src="../../../assets/plus.png"></image>
+    </view>
+</view>

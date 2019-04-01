@@ -1,0 +1,17 @@
+<view class="kp-price-container">
+    <block wx:if="{{isShow}}">
+        <view catch:tap="triggerUnitSelect" style="display: flex; align-items: flex-end;" wx:if="{{!useCustomStyle&&isMultiUnit}}">
+            <text>{{currency}}</text>
+            <text class="kp-price">{{value}}</text>
+            <text>/{{unit}}</text>
+            <image class="kp-triangle" data-id="{{productId}}" mode="aspectFit" src="/assets/down_triangle.png"></image>
+        </view>
+        <block wx:elif="{{!useCustomStyle}}">
+            <text>{{currency}}</text>
+            <text class="kp-price">{{value}}</text>
+            <text>/{{unit}}</text>
+        </block>
+        <text wx:else>{{currency}}{{value}} /{{unit}}</text>
+    </block>
+    <text class="kp-price-cn" wx:else>价格另议</text>
+</view>

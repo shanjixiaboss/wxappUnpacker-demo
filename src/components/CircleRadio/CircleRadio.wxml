@@ -1,0 +1,2 @@
+<image bindtap="toggleSelectStatus" class="kp-selected-item" hidden="{{isSelect}}" mode="aspectFit" src="../../../assets/car_normal_item.png"></image>
+<image bindtap="toggleSelectStatus" class="kp-selected-item" hidden="{{!isSelect}}" mode="aspectFit" src="../../../assets/car_selected_item.png"></image>

@@ -1,0 +1,31 @@
+.kp-pagination {
+    padding: 40rpx 30rpx;
+    padding-bottom: 60rpx;
+    display: flex;
+    background: #fff;
+}
+
+.kp-btn {
+    flex: 1;
+    height: 80rpx;
+    line-height: 80rpx;
+    border: 1rpx solid #c7c7c7;
+    background: #fff;
+    border-radius: 8rpx;
+    text-align: center;
+    font-size: 28rpx;
+}
+
+.kp-btn+.kp-btn {
+    margin-left: 30rpx;
+}
+
+.kp-btn.disabled {
+    border: 1rpx solid #e5e5e5;
+    background: #e5e5e5;
+    color: #fff;
+}
+
+.kp-btn:active {
+    background: #e5e5e5;
+}

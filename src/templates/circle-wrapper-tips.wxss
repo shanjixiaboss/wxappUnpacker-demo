@@ -1,0 +1,33 @@
+.kp-circle-wrapper {
+    display: inline-block;
+    line-height: 1;
+    padding: 0 10rpx;
+    border: 1rpx solid #ccc;
+    border-radius: 26rpx;
+    font-size: 26rpx;
+}
+
+.kp-circle-wrapper text {
+    display: inline-block;
+    position: relative;
+    line-height: 1.5;
+}
+
+.kp-circle-wrapper text::after {
+    content: '';
+    position: relative;
+    top: 5rpx;
+    display: inline-block;
+    height: 30rpx;
+    width: 2rpx;
+    margin: 0 6rpx;
+    background-color: #ccc;
+}
+
+.kp-circle-wrapper text:last-child::after {
+    display: none;
+}
+
+.kp-main-color {
+    color: #ff9f00!important;
+}

@@ -1,0 +1,172 @@
+@charset "UTF-8";
+
+@import "__wuBaseWxss__/7.wxss";
+
+page {
+    background-color: #fff;
+    font-size: 16px;
+    font-family: "PingFang SC";
+    height: 100%;
+    color: #1a1a1a;
+    border-bottom: 1rpx solid #e1e1e1;
+}
+
+page,view,scroll-view,image,form,textarea,input {
+    box-sizing: border-box;
+}
+
+.clearfix::after {
+    display: block;
+    clear: both;
+    content: "";
+}
+
+.kp-textarea {
+    margin: 30rpx;
+    padding: 15rpx 28rpx;
+    background-color: #eeeff3;
+    color: #78797b;
+}
+
+.textarea {
+    width: 100%;
+    height: 150rpx;
+    line-height: 1.2;
+}
+
+.page {
+    background: #efeff4;
+}
+
+.page__hd {
+    padding: 40px;
+}
+
+.page__bd {
+    padding-bottom: 40px;
+}
+
+.page__bd_spacing {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.page__ft {
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.page__title {
+    text-align: left;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.page__desc {
+    margin-top: 5px;
+    color: #888;
+    text-align: left;
+    font-size: 14px;
+}
+
+.kp-page {
+    height: 100%;
+    background-color: #efeff4;
+}
+
+.kp-vertical-center {
+    align-items: center;
+}
+
+.kp-nopadding {
+    padding: 0;
+}
+
+.kp-ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.kp-ellipsis-2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.kp-top_solid {
+    border-top: 1rpx solid #f1f1f1;
+}
+
+.weui-cell:before {
+    border-top: 1rpx solid #f1f1f1;
+}
+
+.kp-fixed_bottom {
+    height: 105rpx;
+    width: 100%;
+    background: transparent;
+}
+
+.kp-btn_bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: #ff9f00;
+    height: 90rpx;
+    line-height: 90rpx;
+    font-size: 36rpx;
+    background: #FFF;
+    border-radius: none;
+    text-align: center;
+    border-top: 1rpx solid #e5e5e5;
+}
+
+.kp-btn_bottom_submit {
+    flex: 1;
+    height: 105rpx;
+    line-height: 105rpx;
+}
+
+.kp-left-slide-list {
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.kp-left-slide-item {
+    position: relative;
+    width: 100%;
+}
+
+.kp-left-slide-item-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    transition: left 0.2s ease-in-out;
+}
+
+.kp-left-slide-item-operation-box {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 150rpx;
+    background: #f00;
+    text-align: center;
+    color: #fff;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.kp-small-note {
+    line-height: 1;
+    font-size: 28rpx;
+    color: rgba(0,0,0,0.5);
+}
+
+.kp-current-msg {
+    line-height: 1;
+    font-size: 34rpx;
+}

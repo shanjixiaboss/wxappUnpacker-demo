@@ -1,0 +1,19 @@
+{
+    "navigationBarTitleText": "购物车",
+    "usingComponents": {
+        "list-item": "../components/ListItem/ListItem",
+        "circle-radio": "../components/CircleRadio/CircleRadio",
+        "price": "../components/Price/Price",
+        "currency": "../components/Currency/Currency",
+        "summary-bar": "../components/SummaryBar/SummaryBar",
+        "tiny-tag": "../components/TinyTag/TinyTag",
+        "tool-tip": "../components/ToolTip/ToolTip",
+        "pagination": "../components/Pagination/Pagination",
+        "input-number": "../components/InputNumber/InputNumber",
+        "unit-radio-list": "../components/RadioList/RadioList",
+        "third-radio-list": "../components/RequireList/RequireList",
+        "second-radio-list": "../components/RequireList/RequireList",
+        "message-box": "../components/MessageBox/MessageBox",
+        "character-counter": "../components/CharacterCounter/CharacterCounter"
+    }
+}

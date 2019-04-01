@@ -1,0 +1,13 @@
+<view class="kp-total-bar weui-flex">
+    <view class="weui-flex">
+        <slot name="others"></slot>
+    </view>
+    <view class="weui-flex kp-summary-bar">
+        <view class="kp-total weui-flex weui-flex__item">
+            <slot name="summary"></slot>
+        </view>
+        <view class="kp-button weui-flex {{buttonDisabled?'kp-submit-disabled':''}}">
+            <slot name="button"></slot>
+        </view>
+    </view>
+</view>

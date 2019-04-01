@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "提示",
+    "usingComponents": {
+        "list-item": "../components/ListItem/ListItem",
+        "price": "../components/Price/Price"
+    }
+}

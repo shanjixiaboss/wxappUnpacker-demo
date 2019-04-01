@@ -1,0 +1,5 @@
+<view class="kpc-currency">
+    <text>{{prefixText}}</text>
+    <text class="kpc-currency-unit">{{currencyUnit}}</text>
+    <text class="kpc-currency-money">{{formatMoney}}</text>
+</view>

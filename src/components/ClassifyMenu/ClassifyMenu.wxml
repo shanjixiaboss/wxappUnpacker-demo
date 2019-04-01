@@ -1,0 +1,37 @@
+<view class="kpc-classify-menu">
+    <view style="display: flex;">
+        <view class="kpc-cm-menu-container" style="position: relative;" wx:if="{{isScrollX&&level2Menus.length}}">
+            <scroll-view class="kpc-cm-scroll-menu-container" scrollIntoView="{{scrollId}}" scrollX="{{true}}" wx:if="{{isScrollX}}">
+                <view id="kpc-cm-scroll-top"></view>
+                <view bind:tap="tapLevel2Menu" class="kpc-cm-scroll-menu {{activeTagId===item.tag_id?'active':''}}" data-menu="{{item}}" id="scroll-to-{{item.tag_id}}" wx:for="{{level2Menus}}" wx:key="{{item.name}}">
+                    <view class="kpc-cm-menu-content">
+                        <text class="full-text">{{item.name}}</text>
+                    </view>
+                </view>
+            </scroll-view>
+            <view bind:tap="toggleLevel2Menus" class="level2-toggle">
+                <image class="kpc-cm-menu-image" mode="aspectFill" src="{{expanding?'/assets/categories/expand.png':'/assets/categories/collapse.png'}}"></image>
+            </view>
+        </view>
+        <view class="kpc-cm-menu-container" wx:else>
+            <view bind:tap="tapMenu" class="kpc-cm-menu {{activeLevel-2===index?'active':''}}" data-menu="{{item}}" wx:for="{{menus}}" wx:key="{{item.name}}">
+                <view class="kpc-cm-menu-content">
+                    <text>{{item.name}}</text>
+                    <image mode="aspectFill" src="{{activeLevel-2===index?'/assets/categories/expand.png':'/assets/categories/collapse.png'}}" wx:if="{{item.withExpandIcon}}"></image>
+                </view>
+            </view>
+        </view>
+        <view class="rank-container kpc-cm-menu-content" wx:if="{{root&&showRank}}">
+            <text>排序</text>
+            <image class="kpc-cm-menu-image" mode="aspectFill" src="/assets/categories/collapse.png"></image>
+        </view>
+    </view>
+    <view class="kpc-cm-option-relative {{expanding?'expand':''}}">
+        <view class="kpc-cm-mask" style="height: {{maskHeight}}px"></view>
+        <view class="kpc-cm-option-container">
+            <view bind:tap="tapOption" class="kpc-cm-option {{item.active?'active':''}}" data-option="{{item}}" wx:for="{{options}}" wx:key="{{item.name}}">
+                <text>{{item.name}}</text>
+            </view>
+        </view>
+    </view>
+</view>

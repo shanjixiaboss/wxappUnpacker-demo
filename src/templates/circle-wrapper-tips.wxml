@@ -1,0 +1,7 @@
+<template name="circle-wrapper-tips">
+    <view class="kp-circle-wrapper">
+        <text>折扣:{{tools.toFixed_2(snapshot.kpv.discount)}}%</text>
+        <text class="kp-main-color">优惠:{{tools.toFixed_2(snapshot.kpv.coupon)}}元</text>
+    </view>
+</template>
+<wxs module="tools" src="../../utils/tools.wxs" />

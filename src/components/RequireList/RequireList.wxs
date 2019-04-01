@@ -1,0 +1,8 @@
+module.exports = ({
+    setBorderStyle: (function(styleType, hasBadge) {
+        if (styleType == 'square' && hasBadge) {
+            return ('kp-square-has-border')
+        };
+        return ('')
+    }),
+});

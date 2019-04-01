@@ -1,0 +1,33 @@
+<view class="picker-page_{{isShow}}">
+    <view style="padding: 0 30rpx 40rpx 30rpx;">
+        <view class="btn-top">
+            <view bindtap="chooseButtonClick" class="text btn-ft" id="cancel">取消</view>
+            <view bindtap="chooseButtonClick" class="text btn-fr" id="confirm">确定</view>
+        </view>
+        <view class="btn-top">
+            <view bindtap="startOrEndDateItem" class="btn-ft btn-top-active_{{startItem}}" id="startDate">
+                <text class="text-top">{{startDateStr}}</text>
+            </view>
+            <view style="display:inline-block;">至</view>
+            <view bindtap="startOrEndDateItem" class="btn-fr btn-top-active_{{endItem}}" id="endDate">
+                <text class="text-top">{{endDateStr}}</text>
+            </view>
+        </view>
+        <picker-view bindchange="pickerViewChange" class="picker-view-date" indicatorStyle="height: 40px;" value="{{dateArr}}">
+            <picker-view-column>
+                <view style="line-height: 40px;" wx:for="{{years}}" wx:key="years">{{item}}</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view style="line-height: 40px" wx:for="{{months}}" wx:key="months">{{item}}</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view style="line-height: 40px" wx:for="{{days}}" wx:key="days">{{item}}</view>
+            </picker-view-column>
+        </picker-view>
+        <view style="height:80rpx;">
+            <view bindtap="monthButtomChange" class="btn-buttom-last" id="lastMonth">上月</view>
+            <view bindtap="monthButtomChange" class="btn-buttom-this" id="thisMonth">本月</view>
+        </view>
+    </view>
+    <view bindtap="closeCalendar" style="width:100%;height:calc(100% - 296rpx );background:#000; opacity:0.5;"></view>
+</view>

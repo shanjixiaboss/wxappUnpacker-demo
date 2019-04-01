@@ -1,0 +1,32 @@
+<view class="page">
+    <navigator class="weui-cells weui-flex store_item">
+        <view class="left" style="width:230rpx;">
+            <image class="weui-media-box__thumb" src="../../assets/default.png"></image>
+        </view>
+        <view class="weui-flex_item">
+            <view class="weui-media-box__title">想不到男装</view>
+            <view style="position: relative;">
+                <image class="store_location" src="../../assets/store_location.png"></image>
+                <view class="weui-media-box__desc">广东省广州市无名区无名路大道广东省广州市无名省广州市无名省广州市无名区无名路大道广A380</view>
+            </view>
+            <view style="padding-top:20rpx;">
+                <image class="weui-media-box__hd_in-appmsg story-item-img" src="{{item.src||'../../assets/default.png'}}" wx:for="{{[1,2]}}" wx:key="img"></image>
+            </view>
+        </view>
+    </navigator>
+    <navigator class="weui-cells weui-flex store_item">
+        <view class="left" style="width:230rpx;">
+            <image class="weui-media-box__thumb" src="../../assets/default.png"></image>
+        </view>
+        <view class="weui-flex_item">
+            <view class="weui-media-box__title">想不到男装</view>
+            <view style="position: relative;">
+                <image class="store_location" src="../../assets/store_location.png"></image>
+                <view class="weui-media-box__desc">广东省广州市无名区无名路大道广东省广州市无名省广州市无名省广州市无名区无名路大道广A380</view>
+            </view>
+            <view style="padding-top:20rpx;">
+                <image class="weui-media-box__hd_in-appmsg story-item-img" src="{{item.src||'../../assets/default.png'}}" wx:for="{{[1,2]}}" wx:key="img"></image>
+            </view>
+        </view>
+    </navigator>
+</view>

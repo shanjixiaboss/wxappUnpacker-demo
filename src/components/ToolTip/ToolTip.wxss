@@ -1,0 +1,51 @@
+.mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1024;
+    background: transparent;
+}
+
+.kp-tooltip {
+    background: #fff;
+    color: rgba(0,0,0,0.5);
+    padding: 20rpx;
+    font-size: 28rpx;
+    word-break: break-all;
+    line-height: 40rpx;
+    position: absolute;
+    border-radius: 4rpx;
+    max-width: 490rpx;
+    max-height: 400rpx;
+    box-shadow: 0 0 16rpx rgba(0,0,0,0.3);
+}
+
+.kp-tooltip.notice {
+    top: 65rpx;
+    left: 168rpx;
+}
+
+.kp-tooltip.address {
+    top: 105rpx;
+    left: 168rpx;
+}
+
+.kp-tooltip-arrow {
+    background: #fff;
+    height: 16rpx;
+    width: 16rpx;
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+.kp-tooltip-arrow.notice {
+    top: -5rpx;
+    left: 20rpx;
+}
+
+.kp-tooltip-arrow.address {
+    top: -5rpx;
+    left: 20rpx;
+}

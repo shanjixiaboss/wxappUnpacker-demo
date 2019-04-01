@@ -1,0 +1,6 @@
+<view class="mask" wx:if="{{!!key}}">
+    <view class="kp-tooltip {{key==='notice'&&'notice'}} {{key==='address'&&'address'}}">
+        <view class="kp-tooltip-arrow {{key==='notice'&&'notice'}} {{key==='address'&&'address'}}"></view>
+        <text>{{text}}</text>
+    </view>
+</view>

@@ -1,0 +1,112 @@
+<template name="place-order-modal">
+    <view class="wrapper {{placeOrderModal?'active':''}}">
+        <view bind:tap="togglePlaceOrderModal" class="kp-place-order-modal-mask"></view>
+        <view class="kp-place-order-modal">
+            <view class="weui-flex kp-modal-product-brief">
+                <list-item hasLine="{{false}}" style="flex: 11" thumbnailUrl="{{product.kpv.thumbnail}}">
+                    <view slot="title">{{product.name}} {{product.kpv.attrs}}</view>
+                    <view class="weui-flex" slot="message" style="flex-direction: column;justify-content: flex-end;">
+                        <view class="kp-small-note weui-flex weui-flex__item" style="align-items: flex-end;" wx:if="{{moqOn&&product.kpv.hasMoq}}">
+              起订量：{{product.kpv.moq}} {{product.kpv.unitName}}
+            </view>
+                        <view class="kp-modal-product-brief-price">
+                            <price isShow="{{priceOn}}" unit="{{product.kpv.unitName}}" value="{{product.kpv.price}}"></price>
+                        </view>
+                    </view>
+                </list-item>
+                <view bind:tap="togglePlaceOrderModal" class="weui-flex__item">
+                    <image class="kp-place-order-icon" src="../../assets/close.png" style="margin-top: 30rpx;"></image>
+                </view>
+            </view>
+            <view class="kp-place-order-scrollable-detail">
+                <view class="weui-cell  kp-unit-wrapper" wx:if="{{product.units.unit.length>1}}">
+                    <view class="kp-type-name">单位</view>
+                    <unit-radio-list bindonchange="changeUnit" checked="{{extra.unit_index}}" itemKey="{{'unit_id'}}" itemName="{{'name'}}" radioList="{{product.units.unit}}" styleType="{{'checking'}}"></unit-radio-list>
+                </view>
+                <view class="kp-top_solid kp-specificationtable-wrapper">
+                    <view style="margin-bottom: 34rpx;" wx:if="{{specificationtable.requirements.requirement.length>2}}">
+                        <third-radio-list bindonchange="changeRequirementValue3" checked="{{extra.requirement_value[2]}}" itemKey="{{'id'}}" itemName="{{'name'}}" nowrap="{{true}}" radioBadgeList="{{requirement3NeedBadgeList}}" radioList="{{specificationtable.requirements.requirement[2].value}}" styleType="{{'line'}}"></third-radio-list>
+                    </view>
+                    <view class="kp-second-specification-wrapper" wx:if="{{specificationtable.requirements.requirement.length>1}}">
+                        <view class="kp-type-name" style="margin-bottom: 30rpx;" wx:if="{{specificationtable.requirements.requirement.length==2}}">
+              {{specificationtable.requirements.requirement[1].requirement_name}}
+            </view>
+                        <view style="padding-right: 30rpx;">
+                            <second-radio-list bindonchange="changeRequirementValue2" checked="{{extra.requirement_value[1]}}" itemKey="{{'id'}}" itemName="{{'name'}}" radioBadgeList="{{requirement2NeedBadgeList}}" radioList="{{specificationtable.requirements.requirement[1].value}}" styleType="{{'square'}}"></second-radio-list>
+                        </view>
+                    </view>
+                    <block wx:if="{{specificationtable.requirements.requirement.length>0}}">
+                        <view class="kp-type-name" wx:if="{{specificationtable.requirements.requirement.length>0}}">
+              {{specificationtable.requirements.requirement[0].requirement_name}}
+            </view>
+                        <view class="kp-first-specification-item weui-flex" wx:for="{{specificationtable.requirements.requirement[0].value}}" wx:key="{{index}}">
+                            <view class="weui-flex__item kp-requirelist-name">{{item.name}}</view>
+                            <view class="kp-remaining-stock">
+                                <block wx:if="{{!validationFailed&&stockOn}}">
+                                    <block wx:if="{{showStockStatus}}">
+                    {{extra.requirement_stock[index]>0?'有货':'无货'}}
+                  </block>
+                                    <block wx:else>剩余: {{tools.formatStock( extra.requirement_stock[index] )}}{{product.kpv.unitName}}</block>
+                                </block>
+                                <block wx:if="{{validationFailed}}">
+                                    <block wx:if="{{extra.requirement_stock_failed[index]!==null}}">
+                    剩余: {{tools.formatStock( extra.requirement_stock_failed[index] )}}{{product.kpv.unitName}}
+                  </block>
+                                    <block wx:elif="{{stockOn}}">
+                                        <block wx:if="{{showStockStatus}}">
+                      {{extra.requirement_stock[index]>0?'有货':'无货'}}
+                    </block>
+                                        <block wx:else>剩余: {{tools.formatStock( extra.requirement_stock[index] )}}{{product.kpv.unitName}}</block>
+                                    </block>
+                                </block>
+                            </view>
+                            <input-number bindonchange="changeRequirementQuantity" cid="{{index}}" class="weui-flex__item" initialValue="{{extra.requirement_quantity[index]}}" precision="{{quality_precision}}" style="margin-right: 30rpx;" value="{{extra.requirement_quantity[index]}}"></input-number>
+                        </view>
+                    </block>
+                    <view class="kp-first-specification-item weui-flex" style="padding-top: 0;" wx:else>
+                        <view class="weui-flex__item" style="font-size: 34rpx; color: #000;">购买数量</view>
+                        <view class="kp-remaining-stock">
+                            <block wx:if="{{!validationFailed&&stockOn}}">
+                                <block wx:if="{{showStockStatus}}">{{product.kpv.stock>0?'有货':'无货'}}</block>
+                                <block wx:else>剩余: {{tools.formatStock(product.kpv.stock)}}{{product.kpv.unitName}}</block>
+                            </block>
+                            <block wx:if="{{validationFailed}}">剩余: {{tools.formatStock(product.kpv.stock)}}{{product.kpv.unitName}}</block>
+                        </view>
+                        <input-number bindonchange="changeRequirementQuantity" cid="{{0}}" class="weui-flex__item" initialValue="{{extra.requirement_quantity[0]}}" precision="{{quality_precision}}" style="margin-right: 30rpx;" value="{{extra.requirement_quantity[0]}}"></input-number>
+                    </view>
+                </view>
+                <view class="kp-top_solid kp-selected-list-wrapper" wx:if="{{selectedListOn&&selectedList.length>0}}">
+                    <view class="weui-flex">
+                        <view style="color: #7f7f7f;margin-bottom: 10rpx;">已选</view>
+                        <view class="weui-flex__item" style="text-align: right">
+              数量:{{extra.kpv_total_quantity}}{{product.kpv.unitName}}
+            </view>
+                    </view>
+                    <view wx:for="{{selectedList}}" wx:key="{{index}}">{{item}}</view>
+                </view>
+                <view bind:tap="toggleRemarkModal" class="kp-top_solid kp-textarea-wrapper">
+                    <text>{{extra.product.remark?extra.product.remark:'对该货品进行备注'}}</text>
+                    <image hidden="{{extra.product.remark}}" src="../../assets/place_order_remark.png" style="width:29rpx;height:32rpx;vertical-align:top;"></image>
+                </view>
+                <view class="kp-fixed_bottom"></view>
+            </view>
+            <view class="kp-confirm-button-wrapper weui-flex">
+                <view bind:tap="removeBill" class="kp-confirm-button kp-confirm-button__remove weui-flex weui-flex__item" wx:if="{{product.kpv.inCart}}">
+          移出购物车
+        </view>
+                <view bind:tap="confirmBill" class="kp-confirm-button weui-flex weui-flex__item">
+          确定
+        </view>
+            </view>
+        </view>
+    </view>
+    <message-box bindbuttontype="bindRemarkInputStatus" status="{{remarkModal}}" titleText="添加备注">
+        <view class="kp-textarea">
+            <textarea bindinput="bindTempRemarkInput" class="textarea" cursorSpacing="20" fixed="true" focus="{{remarkModal}}" maxlength="-1" placeholder="输入内容" rows="4" showConfirmBar="false" value="{{tempRemark}}"></textarea>
+            <view style="text-align: right" wx:if="{{remarkModal}}">
+                <character-counter content="{{tempRemark}}" maxLength="1000"></character-counter>
+            </view>
+        </view>
+    </message-box>
+</template>
+<wxs module="tools" src="../../utils/tools.wxs" />

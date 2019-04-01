@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+.product-list-skeleton {
+    background-repeat: repeat-y;
+    background-image: linear-gradient(#fff 30rpx,#f3f3f3 30rpx,#f3f3f3 210rpx,transparent 0),linear-gradient(#fff 30rpx,#f3f3f3 30rpx,#f3f3f3 60rpx,transparent 0),linear-gradient(#fff 72rpx,#f3f3f3 72rpx,#f3f3f3 102rpx,transparent 0),linear-gradient(#fff 180rpx,#f3f3f3 180rpx,#f3f3f3 210rpx,transparent 0),linear-gradient(#fff 230rpx,#f3f3f3 230rpx,#f3f3f3 286rpx,transparent 0);
+    background-size: 180rpx 310rpx,350rpx 310rpx,216rpx 310rpx,124rpx 310rpx,226rpx 310rpx;
+    background-position: 20rpx 0rpx,220rpx 0rpx,220rpx 0rpx,220rpx 0rpx,344rpx 0rpx;
+}
+
+@-webkit-keyframes loading {
+    to {
+        background-position: 200% 0,20rpx 0rpx,220rpx 0rpx,220rpx 0rpx,220rpx 0rpx,344rpx 0rpx;
+    }
+}
+
+@keyframes loading {
+    to {
+        background-position: 200% 0,20rpx 0rpx,220rpx 0rpx,220rpx 0rpx,220rpx 0rpx,344rpx 0rpx;
+    }
+}
+
+.search-product-skeleton {
+    background-repeat: repeat-y;
+    background-image: linear-gradient(#fff 30rpx,#f3f3f3 30rpx,#f3f3f3 210rpx,transparent 0),linear-gradient(#fff 30rpx,#f3f3f3 30rpx,#f3f3f3 60rpx,transparent 0),linear-gradient(#fff 72rpx,#f3f3f3 72rpx,#f3f3f3 102rpx,transparent 0),linear-gradient(#fff 180rpx,#f3f3f3 180rpx,#f3f3f3 210rpx,transparent 0),linear-gradient(#fff 230rpx,#f3f3f3 230rpx,#f3f3f3 286rpx,transparent 0);
+    background-size: 180rpx 310rpx,490rpx 310rpx,273rpx 310rpx,124rpx 310rpx,226rpx 310rpx;
+    background-position: 20rpx 0rpx,220rpx 0rpx,220rpx 0rpx,220rpx 0rpx,484rpx 0rpx;
+}
+
+@-webkit-keyframes search-loading {
+    to {
+        background-position: 200% 0,20rpx 0rpx,220rpx 0rpx,220rpx 0rpx,220rpx 0rpx,484rpx 0rpx;
+    }
+}
+
+@keyframes search-loading {
+    to {
+        background-position: 200% 0,20rpx 0rpx,220rpx 0rpx,220rpx 0rpx,220rpx 0rpx,484rpx 0rpx;
+    }
+}

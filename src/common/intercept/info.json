@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "跳转中...",
+    "usingComponents": {
+        "city-picker": "../../components/CityPicker/CityPicker"
+    }
+}

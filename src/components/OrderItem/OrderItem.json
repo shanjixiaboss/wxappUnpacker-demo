@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "currency": "../Currency/Currency",
+        "tiny-tag": "../TinyTag/TinyTag"
+    }
+}

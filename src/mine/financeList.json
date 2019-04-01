@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "对账",
+    "usingComponents": {
+        "currency": "../components/Currency/Currency",
+        "finance-item": "../components/FinanceItem/FinanceItem",
+        "date-picker": "../components/DatePicker/DatePicker",
+        "unit-radio-list": "../components/RadioList/RadioList"
+    }
+}

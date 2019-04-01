@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+@import "../../../__wuBaseWxss__/7.wxss";
+
+@charset "UTF-8";
+
+.bg_true::after {
+    overflow: hidden;
+    content: '';
+    display: inline-block;
+    background-image: url("data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAAIsAAACLBAMAAACjN3fMAAAAJFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACmWAJHAAAADHRSTlMAMgcaDBMXECwgKCSY+BNNAAAJnElEQVRo3qVaSXfSUBSOYXLY+MTWFDaRViu6ASM4bSKl1mFDWxE9blKoddog2tZhYxyrbsCx6qY4e9wUrfOf8973EnhAQhK955QkL8n37v3u8IZUcBL/bCV/OSP8j2zZ/0JfIBIh5OOnlPyPIEPXHxBefqiCdwktPosQ8vDx6SzI5CsdgVa8aiROLuxbiO7mXhveBzgRzZsqg79INNNJ9jmyuLDLA0pQDzeeW6E3auSua8MGX5Jo2frWKZ28dokSIPot2bYLorvDCT4md7jL2FA2E5N5nMgXFyj+xp8mijh2XEFJz1SyHHGfLzt7uiZNm6dz+VlFKc0UZifTo/niaMxsrw840nxFemYGsZKvzJr2iEOnT5fOGG/H+56WHZQhEdmIv1K60BY5sZFS2mgYPf+9N8oFojGGSkpK7cpURTnGzk4OFHvBXNeXWJwp6WNW9E8qRXaiP+xhVjBynz2lKNZPiZcU5oB1H3t4vUZyzKK0bU04OFahxz2fq3aPrJVu0+PxlNojxosUx0/u2/Grs3i4XOrpzrkZ2skhsmR9fxu7ERyZ6O3NQkrGQyNio0yUeWPaKV0UGhRrrHM9TpZpaOUdI30rq111S3V+UmVi8y4K9yTtaQf02yVrKDPirOqmCmiGS7pvTT2QMR/Tsquxx/BJoqvMMsLmcl6GD31TZ9PmBloz6Lbw+zOo9UXSqfviHVodym4VobHsI9UO9E8JVCblfngfltHnd9pbt3/DLkrumRFVjZKstjU+qWAPKQ/8xvI0QW/wbb43qMclzYubBpHH8Vt826p36PPdsqd5C3p19bjKh/AjTJVjghfxY0qEwlxCBK6h44BgT3IQn//yrtWw+pcMWGk482xVfE+rIfkDg2anRxhxDIvcb615fRdPJ3OeJ4dleFdqujyg57CmyV5hYkWsDP3NaraI2oGlXq2aQydLzSlUH9qkeYc5qGJ6mul8aQmawCbPktHgRXOgCX3KwU9a8C5BDNjaRnaxro9Ve+8SKsDPAaMi78DjiFtq/CvcxbQMsUvY+QWsqIrqEqUe5a7mMVwMjuvrMWrcQIAZdUnjyUG/sEoqkmWAdENN7QugtMV6oILN6ykiyblMqHFJB5SutDq0iTqKYF5qbvxLEMXPsziHHIdp5UPOJl0wHNAjiNLgy++sSvVAv/e7i+GgHikjSpTvMUaVxJYjG+Fm2hVKshyqA0qHhKjzxtHfZ1ygqELyDKJ0CeX9wJKbKrEZUIRx0oki4s+vJYRJQLY7+ntNFDkekEfgXOVgkNO4ihPuMvg74VhbiBzQyTIchLMb+KyCv2toS0PGsaIXAuW/Vq0NjFfhcJY84m4WcaTBqdFVp7AJSZScDXEZYDaTNhRhAgP4K/y8wJHOLmx8GGt1DckZgPJdFZMEaAwst+IPZ/dvMTh7wazGun8RsfzASnJnksAhqG8UTBnNAcxNw/qSbQJI2FsfnjYSQk0nO2vVoM4tEtE5wRWmjXjclhhdM8k5sF6oSQlhcxhR2mB894G6tz1hxtEgPYf29QnbNZxg8ShCEKmCKcCRIsCM2lQ7fNnECkTYMpyfp7HADdVkYe41HK1TqlaG3iR8lVJKZDwNA0cd2oQAeY0KxzFrg5aoQYOGGTUNUeQDG9p8MA1aA8wwRLK429rbWB2n7iNKAP2+FAcUYV24LTYncH2vCicrOOuzWcFi9FJd6kDyqg1Tt5Cx/jb+ptGosnC4CueFzjTaQ82ArI1DvKFOQPLaTUGLvioM5iLQJ17uQEmytckUmkHKhn2+sJU3Y8APcHPxHq6iOlEalMdVESAjuWTYF4paGT7BYA5gKU61odTII8ajDyldtcmwzy9Z5W4GYWQGk+5AoYkIgpT6aNiBTiKx0qaIvcmQIwjTgQKuSbTqnor2QW+LVstXFdeXQN4APDnCo+w0EtEUSs4Jy2UuS811BP4i/Gjnb1AU8C4lJ65i5IAiZzGVrGREg2ejoNECXCAMj4KxQBVZRnKigLKSzFnD5Fj6+rCI4pSSucak5CjRmCJITo2sCKLNjoXKeAnUQJMxU2OtiXLXGJ0wZQDFTiZVnOWj9jmmDS/XEIWNThCM4DpbmQElriMR9TK4TWsyn6Mod8ySU+2NIp6Gn33oylcJFtIoOAo0UUIRJAfDyF78uOKkG0uFKj/1W9svnDB1ITJEVk8UIYAT7L4EHQ75MA5JJ8gH0yINyHnksDsAf1IZAe/SYdqUuomC5Q7J6T3t0QDmrIyxcgqZVZvvbmrNaSAhjpR7wgyXcWeNxsYf5iAmGJIoRl45SUGF3gbY+AoQQ0V+uDXzYclx3o7+nmL6d8zS9ZyBUo/IjnNcHAsarLcG7yocIg0U0NJJcHIvSjJ7D0eMtNxOTkB3RmG7GkFIX1a4sSHXVDTiGkVQML8T5h6bzK89sHoHcEbuKIyKw+YFwXRoDQ5Tt7e6Q2HjW/PJ+oa2VcNqQiIu13ptrhwPt63D/XrUJQoqIgqt7nFHahc/9XYlAeRzs9xabuEELyV4lcEilqvWNd2Inyl7hcF9I/FmruWbsPf9G2OPZc1IjiMHGgIFrzbtxp/t/L4qDmt52btNQoJfiTUw18cy3mw6jjttO5b5tZuE7VlP6sSw1+GGzCO/pqsRTzATNDf729oePsH4yXtAESmp4+3b6QckGVVUPcJs0dsN8OnL2OppO5PtirVLAxv8u1xHcoZSmlzuaN5B0KDRlFtvU4KPPegy9XoR7x50qY4cw6dHuz+fzL+SUZ2Ku510ymz2ldqtZhbVEeeLrkxCGHHvHcvFMt4bLLlwOouveNJyL+HETrrPmXI2iRIo3ntoPehQXkKKk1lihjKzfaFqfVv5QqfvyoTDvmyMHh68sNuM+Eh5udR7K3GOFYJtj213WQ6/ZV8Qen1dGma6Bm5tsR8xpsqsPE7b4owNseP1Lz26OnmO3hSHZZuHsluYwVvPyr3oO2ZG1FbZ6va8KrKThbu9PxLWjAnsbKXSTYsyHxMMmzSHOD9fNnIjm660aTSUSacNFFh3OuZLn0mmAp+/M2b9Hisp+RTy4rZIzqkm4JxyZrKQL+TzMwpIyjQoPuCqlIgr3H8uTBeGFZR8pjlYbtrlrlh/K/OVOwsSazXEI8suC2RZGLK9OUL6Pez8r7GJrhMEVibuxXf1vQWQuJ+QJ94+hTWkzk95ocfaz99Fj99FdEKkJ3yVWdSjR8Kq5w8jewjZKC78Sp8uCFtn9jVI/yLu23uXLedygQYhZNfi/vqCRCJm9fAugZc6kRqRE+TC8wnhvySWyQ7FHPX4CyRh2F/RHGkFAAAAAElFTkSuQmCC");
+    background-repeat: no-repeat;
+    background-size: 140rpx 140rpx;
+    height: 140rpx;
+    width: 100%;
+    position: absolute;
+    top: 40%;
+    left: 60%;
+}
+
+.bill-cells {
+    border-top: 1rpx solid #f1f1f1;
+    background: #FFF;
+}
+
+.weui-cell-padding {
+    padding-top: 10px;
+    padding-bottom: 2px;
+}
+
+.weui-cell.weui-cell-padding::before {
+    border: 0;
+}
+
+.weui-cells__title,.weui-cells {
+    margin-top: 0px;
+    margin-bottom: -1px;
+}
+
+.weui-media-box__hd_in-appmsg {
+    height: 76rpx;
+    width: 76rpx;
+}
+
+.remark {
+    height: 66rpx;
+    font-size: 26rpx;
+    padding-left: 15px;
+    line-height: 66rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: nowrap;
+    white-space: nowrap;
+    color: #000;
+    opacity: 0.5;
+    padding-right: 200rpx;
+}

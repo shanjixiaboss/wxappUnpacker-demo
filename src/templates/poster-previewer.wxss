@@ -1,0 +1,59 @@
+.kp-poster-preivewer-wrapper {
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    width: 466rpx;
+    height: 830rpx;
+    background-color: #fff;
+}
+
+.kp-poster-preivewer-header {
+    justify-content: center;
+    align-items: center;
+    height: 88rpx;
+}
+
+.kp-poster-preivewer-header__image {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 88rpx;
+}
+
+.kp-poster-preivewer-header__text {
+    position: relative;
+    margin-top: 2px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.kp-poster-previewer-detail {
+    font-size: 12px;
+    padding: 20rpx 30rpx;
+    color: #444;
+}
+
+.kp-poster-previewer-thumbnail {
+    justify-content: center;
+    align-items: center;
+}
+
+.kp-poster-previewer-thumbnail__image {
+    width: 400rpx;
+    height: 400rpx;
+    margin-bottom: 30rpx;
+}
+
+.kp-poster-previewer-qrcode {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 16rpx;
+    margin-bottom: 25rpx;
+}
+
+.kp-poster-previewer-qrcode_image {
+    width: 110rpx;
+    height: 112rpx;
+    margin-bottom: 12rpx;
+}

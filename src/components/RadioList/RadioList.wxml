@@ -1,0 +1,10 @@
+<view bind:tap="radioChange" class="kp-radio-list {{customClass}}" wx:if="{{!nowrap}}">
+    <view class="kp-radio {{checked==index?'actived':''}}" data-id="{{item[itemKey]}}" data-index="{{index}}" wx:for="{{radioList}}" wx:key="{{index}}">{{item[itemName]}}
+      <image class="kp-actived-icon" hidden="{{checked!==index}}" src="../../../assets/checkbox_selected.png"></image>
+    </view>
+</view>
+<scroll-view scrollX bind:tap="radioChange" class="kp-radio-list kp-nowrap {{customClass}}" wx:elif="{{nowrap}}">
+    <view class="kp-radio {{checked==index?'actived':''}}" data-id="{{item[itemKey]}}" data-index="{{index}}" wx:for="{{radioList}}" wx:key="{{index}}">{{item[itemName]}}
+      <image class="kp-actived-icon" hidden="{{checked!==index}}" src="../../../assets/checkbox_selected.png"></image>
+    </view>
+</scroll-view>

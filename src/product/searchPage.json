@@ -1,0 +1,17 @@
+{
+    "navigationBarTitleText": "搜索",
+    "usingComponents": {
+        "list-item": "../components/ListItem/ListItem",
+        "fast-list-item": "../components/FastListItem/FastListItem",
+        "tiny-tag": "../components/TinyTag/TinyTag",
+        "pagination": "../components/Pagination/Pagination",
+        "price": "../components/Price/Price",
+        "tool-tip": "../components/ToolTip/ToolTip",
+        "input-number": "../components/InputNumber/InputNumber",
+        "unit-radio-list": "../components/RadioList/RadioList",
+        "third-radio-list": "../components/RequireList/RequireList",
+        "second-radio-list": "../components/RequireList/RequireList",
+        "message-box": "../components/MessageBox/MessageBox",
+        "character-counter": "../components/CharacterCounter/CharacterCounter"
+    }
+}

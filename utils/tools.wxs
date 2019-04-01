@@ -1,0 +1,107 @@
+var LOCATION = ({
+    HTTP_IMAGE_DEFAULT: 'https://kpavatarstorage.oss-cn-hangzhou.aliyuncs.com/',
+    HTTP_IMAGE_PRODUCT: 'https://kpproductstorage.oss-cn-hangzhou.aliyuncs.com/',
+});
+
+function converByPrecision(val, precision) {
+    var number = +val;
+    if (precision == undefined) {
+        precision = 2
+    };
+    if (!number) return (0);;
+    var tmp = number.toFixed(precision).split('.');
+    tmp[(0)] = tmp[(0)].replace(getRegExp('\x5cB(?\x3d(?:\x5cd{3})+(?!\x5cd))', 'g'), ',');
+    tmp[(1)] = tmp[(1)] ? tmp[(1)].replace(getRegExp('0+$'), '') : '';
+    if (tmp[(1)]) {
+        return (tmp.join('.'))
+    };
+    return (tmp[(0)])
+};
+module.exports = ({
+    getCorporationIcon: (function(val) {
+        if (val) {
+            return (~val.indexOf('http') ? val : LOCATION[("" + 'HTTP_IMAGE_DEFAULT')] + val + "_140")
+        } else {
+            return
+        }
+    }),
+    formatDate: (function(date, regexp) {
+        regexp = undefined === regexp ? 'yyyy-MM-dd' : regexp;
+        if (typeof date !== 'object') {
+            date = getDate(+date)
+        };
+
+        function formatNumber(n) {
+            n = n.toString();
+            return (n[(1)] ? n : '0' + n)
+        };
+        var tmps = [({
+            key: 'y+',
+            data: date.getFullYear(),
+        }), ({
+            key: 'M+',
+            data: formatNumber(date.getMonth() + 1),
+        }), ({
+            key: 'd+',
+            data: formatNumber(date.getDate()),
+        }), ({
+            key: 'H+',
+            data: formatNumber(date.getHours()),
+        }), ({
+            key: 'm+',
+            data: formatNumber(date.getMinutes()),
+        }), ({
+            key: 's+',
+            data: formatNumber(date.getSeconds()),
+        })];
+        tmps.map((function(i) {
+            regexp = regexp.replace(getRegExp(i.key, 'g'), i.data)
+        }));
+        return (regexp)
+    }),
+    paytypeTransfer: (function(value, record_type, pay_type) {
+        if (record_type === 'RECEIVABLE' || record_type === 0 || record_type === 'SENDABLE' || record_type === 2) {
+            return ('')
+        };
+        if (value === 'CASH' || value === 0) {
+            return ('现金支付')
+        } else if (value === 'WEIXINPAY' || value === 1) {
+            return ('微信支付')
+        } else if (value === 'ALIPAY' || value === 2) {
+            return ('支付宝支付')
+        } else if (value === 'SWIPE' || value === 3) {
+            return ('刷卡支付')
+        } else if (value === 'TRANSFER' || value === 4) {
+            return ('转账支付')
+        } else if (value === 'OTHER' || value === 5) {
+            return ('其他支付')
+        } else if (pay_type) {
+            for (var i = 0; i < pay_type.length; i++) {
+                if (pay_type[((nt_9 = (i), null == nt_9 ? undefined : 'number' === typeof nt_9 ? nt_9 : "" + nt_9))].type === value) return (pay_type[((nt_10 = (i), null == nt_10 ? undefined : 'number' === typeof nt_10 ? nt_10 : "" + nt_10))].value);
+            }
+        } else {
+            return ('其他支付')
+        }
+    }),
+    recodetypeTransfer: (function(value) {
+        if (value === 'RECEIVABLE' || value === 0) {
+            return ('应付')
+        } else if (value === 'RECEIVED' || value === 1) {
+            return ('付款')
+        } else if (value === 'SENDABLE' || value === 2) {
+            return ('应付')
+        } else if (value === 'SENDED' || value === 3) {
+            return ('付款')
+        } else if (value === 'EXPENSE' || value === 4) {
+            return ('开支')
+        } else if (value === 'OBSOLETED_OUT' || value === 5) {
+            return ('应付')
+        }
+    }),
+    toFixed_2: (function(value) {
+        return (value.toFixed(2))
+    }),
+    formatStock: (function(val, precision) {
+        return (converByPrecision(val, precision))
+    }),
+});

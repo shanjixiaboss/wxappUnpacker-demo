@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+@import "../templates/single-item.wxss";
+
+.page {
+    height: 100%;
+}
+
+.weui-cell {
+    background: #fff;
+}
+
+.panel-mid {
+    margin: 20rpx 0;
+}
+
+.weui-media-box__hd {
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.weui-footer {
+    position: fixed;
+    bottom: 30rpx;
+    left: 0;
+    right: 0;
+}

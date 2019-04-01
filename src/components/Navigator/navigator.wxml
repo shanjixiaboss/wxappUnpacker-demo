@@ -1,0 +1,26 @@
+<view catchtap="tap" class="navigator-panel-{{flag}}" style="display:{{isShow?'':'none'}} ">
+    <view catch:touchmove="touch" catchtap="tap" class="kp-complete-info kp-navigator-{{flag}}" style="top:{{top}};right:{{right}};bottom:{{bottom}};left:{{left}}">
+        <view class="navigator-show-{{flag}}" style="display:{{flag?'true':'none'}};flex-direction:{{direction}}; ">
+            <view bindtap="navigatorEvent" class="flex_item" id="INDEX_PATH">
+                <image src="/assets/purchase_normal.png"></image>
+        选货
+      </view>
+            <view bindtap="navigatorEvent" class="flex_item" id="CART_PATH">
+                <image src="/assets/car_normal.png"></image>
+        购物车
+      </view>
+            <view bindtap="navigatorEvent" class="flex_item" id="MINE_PATH">
+                <image src="/assets/me_normal.png"></image>
+        我的
+      </view>
+            <view class="flex_item arrow {{direction}}">
+                <image src="/assets/arrow.png"></image>
+            </view>
+        </view>
+        <view catchtap="tap" class="navigator" style="display:{{!flag?'true':'none'}}">导航</view>
+    </view>
+</view>
+<navigator class="cart" openType="reLaunch" url="/src/tabbar/car" wx:if="{{showCart}}">
+    <image src="/assets/car_normal.png"></image>
+    <view class="{{cart_value?'top_dot':''}}">{{cart_value>99?'...':cart_value}}</view>
+</navigator>

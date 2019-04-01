@@ -1,0 +1,20 @@
+{
+    "navigationBarBackgroundColor": "#ff9f00",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#ff9f00",
+    "usingComponents": {
+        "fast-list-item": "../components/FastListItem/FastListItem",
+        "list-item": "../components/ListItem/ListItem",
+        "tiny-tag": "../components/TinyTag/TinyTag",
+        "tool-tip": "../components/ToolTip/ToolTip",
+        "pagination": "../components/Pagination/Pagination",
+        "price": "../components/Price/Price",
+        "input-number": "../components/InputNumber/InputNumber",
+        "unit-radio-list": "../components/RadioList/RadioList",
+        "third-radio-list": "../components/RequireList/RequireList",
+        "second-radio-list": "../components/RequireList/RequireList",
+        "message-box": "../components/MessageBox/MessageBox",
+        "character-counter": "../components/CharacterCounter/CharacterCounter",
+        "classify-menu": "../components/ClassifyMenu/ClassifyMenu"
+    }
+}

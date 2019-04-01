@@ -1,0 +1,68 @@
+<view class="weui-flex header" wx:if="{{isOrderEdit}}">
+    <view bind:tap="exitOrderEdit" class="weui-flex__item">正在修改订单，点击退出</view>
+</view>
+<block wx:if="{{productList.length>0}}">
+    <view bindtouchstart="touchStart" class="kp-page">
+        <view bind:tap="toggleEditStatus" class="kp-edit">
+            <text hidden="{{isEdit}}">编辑</text>
+            <text hidden="{{!isEdit}}">取消</text>
+        </view>
+        <view class="kp-left-slide-list">
+            <view class="kp-left-slide-item" wx:for="{{productList}}" wx:key="{{index}}">
+                <view bindtouchend="touchEnd" bindtouchmove="touchMove" bindtouchstart="touchStart" class="kp-left-slide-item-content" data-index="{{index}}" style="left:{{item.left}}rpx;">
+                    <list-item catch:tap="clickProductItem" class="list-style" data-id="{{item.product_id}}" data-index="{{index}}" hasVideo="{{item.kpv.video}}" isLeftSlided="{{hasLeftSlidedItem}}" markValue="{{item.kpv.markValue}}" messageFlexEnd="{{true}}" needSelect="{{isEdit}}" selectStatus="{{item.isSelect}}" thumbnailUrl="{{item.kpv.thumbnail[0]}}">
+                        <view slot="title">{{item.name}} {{item.kpv.attrs}}</view>
+                        <view class="weui-flex kp-message-wrapper" slot="message">
+                            <view class="kp-ellipsis kp-small-note" wx:if="{{item.kpv.remark}}">{{item.kpv.remark}}</view>
+                            <view class="kp-current-msg weui-flex__item weui-flex">
+                                <price isShow="{{priceOn}}" unit="{{item.kpv.unit}}" value="{{item.kpv.price}}"></price>
+                                <view catch:tap="stopPropagation" class="weui-flex" style="position: relative; justify-content: flex-end;" wx:if="{{item.kpv.mark.type!=='NO_STOCK'&&item.kpv.mark.type!=='DELETED'}}">
+                                    <view catch:tap="processPlaceOrder" data-id="{{item.product_id}}" style="position: absolute;top: 0; left: 0; right: 0; bottom: 0; z-index: 3;" wx:if="{{item.kpv.hasMultipleSpecs}}"></view>
+                                    <input-number catch:onchange="processPlaceOrder" cid="{{0}}" data-id="{{item.product_id}}" expandClickArea="{{true}}" initialValue="{{item.kpv.quantity}}" precision="{{quality_precision}}" style="{{blockStyle?'align-self:flex-end;':''}}" value="{{item.kpv.extra.quantity}}"></input-number>
+                                </view>
+                            </view>
+                        </view>
+                    </list-item>
+                </view>
+                <view bindtap="deleteItem" class="kp-left-slide-item-operation-box weui-flex" data-index="{{index}}">
+                    <view>删除</view>
+                </view>
+            </view>
+        </view>
+        <view class="kp-fixed_bottom" style="height: 56px;"></view>
+        <summary-bar buttonDisabled="{{isEdit&&!needDelList.length||!isEdit&&needOrderPrice>0}}">
+            <view class="kp-warning-title" slot="others" wx:if="{{!isEdit&&needOrderPrice>0}}">
+        最低下单金额{{store_order_price_threshold}}元，您还差{{needOrderPrice}}元。
+      </view>
+            <view class="kp-select-box weui-flex" slot="summary" wx:if="{{isEdit}}">
+                <circle-radio bind:status="toggleAllSelectStatus" status="{{isAllSelect}}" style="margin-right: 30rpx;"></circle-radio>
+                <view hidden="{{needDelList.length>0&&needDelList.length<productList.length}}">
+          全选
+        </view>
+                <view hidden="{{needDelList.length===0||needDelList.length===productList.length}}">
+          已选（{{needDelList.length}}）
+        </view>
+            </view>
+            <view class="kp-total-infor weui-flex" slot="summary" wx:if="{{!isEdit}}">
+                <view class="kp-total-price" wx:if="{{priceOn}}">
+                    <currency money="{{totalPrice}}" prefixText="金额:"></currency>
+                </view>
+                <view class="kp-total-amount">
+          数量: {{tools.formatStock(totalQuantity)}}
+          <currency money="{{totalPriceTax}}" prefixText="税额:" wx:if="{{priceTax}}"></currency>
+                </view>
+            </view>
+            <view bind:tap="clickConfirm" class="kp-btn_bottom_submit" slot="button">
+                <text hidden="{{isEdit}}">下单</text>
+                <text hidden="{{!isEdit}}">删除</text>
+            </view>
+        </summary-bar>
+    </view>
+    <import src="../templates/place-order-modal.wxml"></import>
+    <template is="place-order-modal" data="{{...modal}}"></template>
+</block>
+<view class="weui-flex kp-empty-cart kp-top_solid" wx:else>
+    <image class="kp-empty-cart-image" mode="aspectFit" src="../../assets/empty_cart.png"></image>
+    <view>购物车还是空的呐～</view>
+</view>
+<wxs module="tools" src="../../utils/tools.wxs" />

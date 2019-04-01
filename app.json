@@ -1,0 +1,134 @@
+{
+    "pages": [
+        "src/tabbar/route",
+        "src/tabbar/product",
+        "src/tabbar/mine",
+        "src/tabbar/car",
+        "src/common/login/index",
+        "src/common/login/select",
+        "src/common/notFound/index",
+        "src/common/notFound/appPage",
+        "src/common/qrCode/index",
+        "src/common/intercept/index",
+        "src/common/intercept/info",
+        "src/product/searchPage",
+        "src/product/classPage",
+        "src/product/corporationIntro",
+        "src/mine/profile",
+        "src/mine/profileAddress",
+        "src/mine/financeList",
+        "src/mine/corporationList",
+        "src/car/placeOrder",
+        "src/car/previewImage",
+        "src/car/submitOrder",
+        "src/car/orderResult",
+        "src/order/orderList",
+        "src/order/orderDetail",
+        "src/order/productDetail",
+        "src/order/interceptedList"
+    ],
+    "window": {
+        "navigationBarBackgroundColor": "#FFFFFF",
+        "navigationBarTitleText": "超级采购 ",
+        "enablePullDownRefresh": false,
+        "navigationStyle": "default",
+        "navigationBarTextStyle": "black",
+        "backgroundColor": "#FFFFFF",
+        "backgroundTextStyle": "light",
+        "backgroundColorBottom": "#FFFFFF"
+    },
+    "tabBar": {
+        "selectedColor": "#ff9f00",
+        "backgroundColor": "#fff",
+        "borderStyle": "white",
+        "list": [
+            {
+                "pagePath": "src/tabbar/product",
+                "text": "选货",
+                "iconPath": "assets/purchase_normal.png",
+                "selectedIconPath": "assets/purchase_selected.png"
+            },
+            {
+                "pagePath": "src/tabbar/car",
+                "text": "购物车",
+                "iconPath": "assets/car_normal.png",
+                "selectedIconPath": "assets/car_selected.png"
+            },
+            {
+                "pagePath": "src/tabbar/mine",
+                "text": "我的",
+                "iconPath": "assets/me_normal.png",
+                "selectedIconPath": "assets/me_selected.png"
+            }
+        ]
+    },
+    "networkTimeout": {
+        "request": 30000,
+        "downloadFile": 10000
+    },
+    "subPackages": [
+        {
+            "root": "src/common/login",
+            "pages": [
+                "src/common/login/index",
+                "src/common/login/select"
+            ]
+        },
+        {
+            "root": "src/common/notFound",
+            "pages": [
+                "src/common/notFound/index",
+                "src/common/notFound/appPage"
+            ]
+        },
+        {
+            "root": "src/common/qrCode",
+            "pages": [
+                "src/common/qrCode/index"
+            ]
+        },
+        {
+            "root": "src/common/intercept",
+            "pages": [
+                "src/common/intercept/index",
+                "src/common/intercept/info"
+            ]
+        },
+        {
+            "root": "src/product",
+            "pages": [
+                "src/product/searchPage",
+                "src/product/classPage",
+                "src/product/corporationIntro"
+            ]
+        },
+        {
+            "root": "src/mine",
+            "pages": [
+                "src/mine/profile",
+                "src/mine/profileAddress",
+                "src/mine/financeList",
+                "src/mine/corporationList"
+            ]
+        },
+        {
+            "root": "src/car",
+            "pages": [
+                "src/car/placeOrder",
+                "src/car/previewImage",
+                "src/car/submitOrder",
+                "src/car/orderResult"
+            ]
+        },
+        {
+            "root": "src/order",
+            "pages": [
+                "src/order/orderList",
+                "src/order/orderDetail",
+                "src/order/productDetail",
+                "src/order/interceptedList"
+            ]
+        }
+    ],
+    "debug": true
+}

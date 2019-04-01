@@ -1,0 +1,17 @@
+.kp-price-container {
+    height: 48rpx;
+    line-height: 48rpx;
+    font-size: 28rpx;
+    display: flex;
+    align-items: flex-end;
+}
+
+.kp-price {
+    font-size: 34rpx;
+    font-weight: bold;
+}
+
+.kp-triangle {
+    width: 48rpx;
+    height: 48rpx;
+}

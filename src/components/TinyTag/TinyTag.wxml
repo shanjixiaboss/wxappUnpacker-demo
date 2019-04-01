@@ -1,0 +1,1 @@
+<view class="kp-tag{{tagTypes}}" style="color:{{tagColor}}">{{tagText}}</view>

@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "单据详情",
+    "usingComponents": {
+        "currency": "../components/Currency/Currency",
+        "list-item": "../components/ListItem/ListItem",
+        "tiny-tag": "../components/TinyTag/TinyTag",
+        "price": "../components/Price/Price",
+        "kp-navigator": "../components/Navigator/navigator"
+    }
+}

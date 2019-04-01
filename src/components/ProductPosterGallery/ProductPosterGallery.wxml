@@ -1,0 +1,40 @@
+<view class="kpc-ppg-container">
+    <view bind:tap="closeGallery" class="close-container">
+        <image class="close" src="../../../assets/close.png"></image>
+    </view>
+    <view>
+        <swiper bindchange="handleSwiperChange" nextMargin="55" previousMargin="55">
+            <swiper-item wx:for="{{posterViews}}" wx:key="*this">
+                <view class="poster-preview-container">
+                    <view class="poster-preview {{item}}">
+                        <view class="title-section">
+                            <view class="corpo-title">
+                                <image class="kp-avatar" mode="aspectFill" src="{{posterData.corporationIcon}}"></image>
+                                <text>{{posterData.corporationName}}</text>
+                            </view>
+                            <view class="product-info">
+                                <text>{{posterData.productName}}</text>
+                            </view>
+                        </view>
+                        <view class="image-section">
+                            <image mode="aspectFit" src="{{imageUrl}}"></image>
+                        </view>
+                        <view class="code-section">
+                            <image mode="aspectFit" src="{{wxaCodeData}}"></image>
+                        </view>
+                        <view class="tips-section">
+                            <text>长按识别小程序，马上下单！</text>
+                        </view>
+                    </view>
+                </view>
+            </swiper-item>
+        </swiper>
+        <view class="save-container">
+            <button bind:tap="handleSavePoster" class="weui-footer_fixed-bottom save-button">
+        保存图片
+      </button>
+            <text>保存图片后分享到朋友圈，会有更多人看到商品哦～</text>
+        </view>
+    </view>
+    <canvas canvasId="poster-canvas" class="{{canvasClass}}"></canvas>
+</view>

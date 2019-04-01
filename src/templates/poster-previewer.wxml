@@ -1,0 +1,18 @@
+<template name="poster-previewer">
+    <view class="kp-poster-preivewer-wrapper weui-flex">
+        <view class="kp-poster-preivewer-header weui-flex">
+            <image class="kp-poster-preivewer-header__image" mode="scaleToFill" src="../../assets/share_header.png"></image>
+            <view class="kp-poster-preivewer-header__text">{{corporationName}}</view>
+        </view>
+        <view class="kp-poster-previewer-detail">
+            <view class="kp-ellipsis">{{productName}}</view>
+        </view>
+        <view class="kp-poster-previewer-thumbnail weui-flex weui-flex__item">
+            <image class="kp-poster-previewer-thumbnail__image" mode="aspectFill" src="{{image}}"></image>
+        </view>
+        <view class="kp-poster-previewer-qrcode weui-flex">
+            <image class="kp-poster-previewer-qrcode_image" src="../../assets/default_qrcode.png"></image>
+            <view>{{qrcodeText}}</view>
+        </view>
+    </view>
+</template>

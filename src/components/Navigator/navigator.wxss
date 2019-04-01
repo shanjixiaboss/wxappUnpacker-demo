@@ -1,0 +1,145 @@
+@charset "UTF-8";
+
+.navigator-panel-true {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 1024;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.kp-complete-info {
+    z-index: 1024;
+    box-shadow: 0px 1px 5px 1px rgba(0,0,0,0.3);
+    border-radius: 60rpx;
+    background-color: #fff;
+    color: #979797;
+    width: 120rpx;
+    height: 120rpx;
+    position: fixed;
+}
+
+.kp-complete-info:active {
+    background: rgba(0,0,0,0.15);
+}
+
+.kp-navigator-false {
+    animation: movingback 0.2s;
+}
+
+@-webkit-keyframes movingback {
+    from {
+        width: 480rpx;
+    }
+
+    to {
+        width: 120rpx;
+    }
+}
+
+@keyframes movingback {
+    from {
+        width: 480rpx;
+    }
+
+    to {
+        width: 120rpx;
+    }
+}
+
+.kp-navigator-true {
+    animation: moving 0.2s;
+    width: 480rpx;
+    padding: 0 20rpx;
+}
+
+@-webkit-keyframes moving {
+    from {
+        width: 120rpx;
+    }
+
+    to {
+        width: 480rpx;
+    }
+}
+
+@keyframes moving {
+    from {
+        width: 120rpx;
+    }
+
+    to {
+        width: 480rpx;
+    }
+}
+
+.navigator-show-true {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+    height: 120rpx;
+}
+
+.flex_item {
+    text-align: center;
+    flex: 1;
+    font-size: 26rpx;
+}
+
+.flex_item>image {
+    display: block;
+    margin: auto;
+    width: 48rpx;
+    height: 48rpx;
+}
+
+.navigator {
+    text-align: center;
+    flex: 0.5;
+    line-height: 120rpx;
+}
+
+.arrow {
+    flex: 0.5;
+    transform: rotate(-90deg);
+}
+
+.arrow>image {
+    width: 52rpx;
+    height: 52rpx;
+}
+
+.arrow.row-reverse {
+    transform: rotate(90deg);
+}
+
+.cart {
+    position: fixed;
+    left: 40rpx;
+    bottom: 10%;
+    width: 30px;
+    height: 30px;
+}
+
+.cart>image {
+    background: #fff;
+    width: 30px;
+    height: 30px;
+}
+
+.cart>.top_dot {
+    position: absolute;
+    font-size: 26rpx;
+    background: red;
+    left: 25px;
+    top: -20rpx;
+    border-radius: 41px;
+    width: 18px;
+    line-height: 18px;
+    text-align: center;
+    color: #fff;
+}

@@ -1,0 +1,15 @@
+<view bindtap="innerClickItem" class="account-cells top" id="{{id}}">
+    <view class="weui-cell top_cell">
+        <view class="weui-cell__bd">{{title_left}}
+      <text class="top_tips" wx:if="{{pay_type_value}}">({{pay_type_value}})</text>
+        </view>
+        <view>
+            <currency money="{{title_right}}"></currency>
+        </view>
+    </view>
+    <view class="weui-form-preview__bd content">
+        <view class="weui-form-preview__label content_lt">{{detail_left}}</view>
+        <tiny-tag class="weui-form-preview__label" tagType="{{tiny_tag}}" wx:if="{{tiny_tag}}"></tiny-tag>
+        <view class="weui-form-preview__value">{{detail_right}}</view>
+    </view>
+</view>

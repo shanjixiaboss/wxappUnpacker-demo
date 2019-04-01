@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+@import "../../__wuBaseWxss__/6.wxss";
+
+.kp-loadmore {
+    width: 100%;
+    background-color: #fff;
+}
+
+.kp-loadmore.dack-bg {
+    background-color: #efeff4;
+}
+
+.kp-loadmore__loading {
+    height: 140rpx;
+    line-height: 140rpx;
+    text-align: center;
+}
+
+.kp-loadmore__loading .kp-loadmore__tips_text::before,.kp-loadmore__loading .kp-loadmore__tips_text::after {
+    display: none;
+}
+
+.kp-loadmore__tips_in-line {
+    height: 140rpx;
+    line-height: 140rpx;
+    text-align: center;
+}
+
+.kp-loadmore__tips_text {
+    position: relative;
+    padding: 0rpx 20rpx;
+    font-size: 24rpx;
+    color: rgba(0,0,0,0.2);
+}

@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "提交订单",
+    "usingComponents": {
+        "currency": "../components/Currency/Currency",
+        "summary-bar": "../components/SummaryBar/SummaryBar",
+        "message-box": "../components/MessageBox/MessageBox",
+        "character-counter": "../components/CharacterCounter/CharacterCounter"
+    }
+}

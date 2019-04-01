@@ -1,0 +1,18 @@
+<view bind:tap="onTapSwiper" class="kp-image-swiper">
+    <swiper bindchange="handleSwiperChange" duration="500">
+        <swiper-item wx:for="{{previewList}}" wx:key="{{index}}">
+            <view class="kp-image-swiper-item-wrapper {{hasVideo&&index==0?'kp-video':''}}">
+                <image class="kp-image-swiper-item" mode="aspectFill" src="{{item}}"></image>
+            </view>
+        </swiper-item>
+    </swiper>
+    <view class="kp-indicator">{{currentIndex}}/{{listLength}}</view>
+    <view capture-catch:tap="handleDownload" class="kp-download" wx:if="{{hasImg&&showDownload}}">
+        <image mode="aspectFill" src="/assets/download.png"></image>
+    </view>
+    <view capture-catch:tap="closeGuide" class="share-container" wx:if="{{hasImg&&showDownload&&showGuide}}">
+        <image alt="close" class="close" src="./assets/close.png"></image>
+        <text style="padding: 0 20rpx 0 10rpx;">|</text>
+        <text>点这里保存商品海报</text>
+    </view>
+</view>

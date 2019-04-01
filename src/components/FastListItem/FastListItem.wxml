@@ -1,0 +1,14 @@
+<view class="weui-flex kp-item {{prefixStyleClass}}">
+    <view class="kp-preview-box">
+        <view class="kp-video" wx:if="{{hasVideo}}"></view>
+        <image bind:tap="tapThumbnail" class="kp-preview" lazyLoad="true" mode="aspectFill" src="{{thumbnailUrl}}" wx:if="{{thumbnailUrl}}"></image>
+    </view>
+    <view class="kp-info-box weui-flex__item weui-flex">
+        <view class="kp-title kp-ellipsis-2">
+            <slot name="title"></slot>
+        </view>
+        <view class="kp-message weui-flex weui-flex__item kp-message-flex-end">
+            <slot name="message"></slot>
+        </view>
+    </view>
+</view>

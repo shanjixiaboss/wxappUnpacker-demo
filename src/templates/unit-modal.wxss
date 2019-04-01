@@ -1,0 +1,30 @@
+.unit-modal-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.unit-modal-dialog {
+    min-width: 620rpx;
+    padding: 40rpx 30rpx;
+    border-radius: 16rpx;
+    background-color: #fff;
+    text-align: center;
+}
+
+.unit-modal-dialog .title {
+    font-size: 34rpx;
+    color: rgba(0,0,0,0.9);
+}
+
+.unit-modal-dialog .subtitle {
+    font-size: 26rpx;
+    color: rgba(0,0,0,0.5);
+}

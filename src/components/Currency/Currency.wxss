@@ -1,0 +1,13 @@
+.kpc-currency {
+    display: inline-block;
+}
+
+.kpc-currency-unit {
+    font-size: 24rpx;
+    font-weight: 600;
+}
+
+.kpc-current-money {
+    font-size: 32rpx;
+    font-weight: 600;
+}

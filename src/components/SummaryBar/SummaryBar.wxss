@@ -1,0 +1,32 @@
+@import "../../../__wuBaseWxss__/7.wxss";
+
+.kp-total-bar {
+    position: fixed;
+    bottom: 1rpx;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    flex-direction: column;
+}
+
+.kp-summary-bar {
+    height: 105rpx;
+    background-color: #fff;
+}
+
+.kp-total {
+    padding: 15rpx 30rpx;
+    font-size: 26rpx;
+}
+
+.kp-button {
+    width: 210rpx;
+    align-items: center;
+    color: #ffffff;
+    background-color: #ff9f00;
+    text-align: center;
+}
+
+.kp-submit-disabled {
+    background-color: #ccc;
+}
